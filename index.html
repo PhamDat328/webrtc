@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Midterm WebRTC</title>
+
+    <style>
+        .videos {
+            display: grid;
+            gap: 50px;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        /* .videos video {
+            background-color: antiquewhite;
+        } */
+
+        .videos .local,
+        .videos .remote {
+            position: relative;
+        }
+
+        .videos #usernameLocal,
+        .videos #usernameRemote {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            z-index: 10;
+            /* background-color: black; */
+        }
+
+    </style>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+        integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://unpkg.com/peerjs@1.4.7/dist/peerjs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.3/socket.io.js"
+        integrity="sha512-iWPnCISAd/J+ZacwV2mbNLCaPGRrRo5OS81lKTVPtRg1wGTC20Cfmp5Us5RcbLv42QLdbAWl0MI57yox5VecQg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body>
+    <div id="main-content">
+        <p>Online user:</p>
+        <ul id="ulUser">
+
+        </ul>
+        <h3 id="my-peer">Your id: </h3>
+        <div class="videos">
+            <div class="local">
+                <span id="usernameLocal"></span>
+                <video src="" id="localStream" width="300"></video>
+                <button id="stopCameraLocal">Turn off camera</button>
+                <button id="stopAudioLocal">Turn off Mic</button>
+            </div>
+            <div class="remote">
+                <span id="usernameRemote"></span>
+                <video src="" id="remoteStream" width="300"></video>
+            </div>
+        </div>
+        <input type="text" name="" id="remoteId" placeholder="Remote ID">
+        <button id="btnCall">Call</button>
+    </div>
+
+    <div id="register">
+        <input type="text" name="" id="txtUsername" placeholder="Enter your username">
+        <button id="btnSignup">Sign up</button>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
