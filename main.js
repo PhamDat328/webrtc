@@ -2,7 +2,7 @@ const socket = io("https://webrtc-midterm.herokuapp.com/");
 let usernameRemote;
 
 $("#main-content").hide();
-const myVideo = document.getElementById("#localStream");
+const myVideo = document.getElementById("localStream");
 myVideo.muted = true;
 
 socket.on("DANH_SACH_ONLINE", (arrUserInfo) => {
